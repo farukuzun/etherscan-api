@@ -144,3 +144,15 @@ func (c *Client) TokenBalance(contractAddress, address string) (balance *BigInt,
 	err = c.call("account", "tokenbalance", param, &balance)
 	return
 }
+
+// AddressTokenBalance gets the BEP-20 tokens and amount held by an address.
+func (c *Client) AddressTokenBalance(address string, page int, offset int) (balance []TokenBalance, err error) {
+	param := M{
+		"address": address,
+		"page":    page,
+		"offset":  offset,
+	}
+
+	err = c.call("account", "addresstokenbalance", param, &balance)
+	return
+}

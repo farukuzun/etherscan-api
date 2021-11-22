@@ -25,6 +25,12 @@ type AccountBalance struct {
 	Balance *BigInt `json:"balance"`
 }
 
+// TokenBalance token and its balance in pair
+type TokenBalance struct {
+	TokenContractAddress string  `json:"token_contract_address"`
+	Balance              *BigInt `json:"balance"`
+}
+
 // NormalTx holds info from normal tx query
 type NormalTx struct {
 	BlockNumber       int     `json:"blockNumber,string"`
